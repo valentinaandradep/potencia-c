@@ -1,19 +1,24 @@
-name: C/C++ CI
+name: CI
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
-  build:
-
+  build-and-test:
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v4
-    - name: compile
-      run: gcc test_potencia.c -o test_potencia
-    - name: execute
-      run: ./test_potencia
+      - uses: actions/checkout@v4
+
+      - name: compilar o programa principal
+        run: gcc potencia.c function_potencia.c -o potencia
+
+      - name: executar o programa principal
+        run: ./potencia 5 5
+
+      - name: mostrar o conteudo do arquivo criado
+        run: cat potencia.txt
+
+      - name: compilar o arquivo de teste
+        run: gcc test_potencia.c function_potencia.c -o test_potencia
+
+      - name: executar o arquivo de teste
+        run: ./test_potencia
