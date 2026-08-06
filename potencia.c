@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-int potencia(int base, int expoente);
+#include "function_potencia.c"
 
 int main(int argc, char *argv[]) {
     int base, expoente, resultado;
