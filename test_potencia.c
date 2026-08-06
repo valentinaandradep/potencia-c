@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-
-int potencia(int base, int expoente);
+#include "function_potencia.c"
 
 int main(void) {
     assert(potencia(2, 2) == 4);
