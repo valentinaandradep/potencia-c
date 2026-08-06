@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: compilar o programa principal
-        run: gcc potencia.c function_potencia.c -o potencia
+        run: gcc potencia.c -o potencia
 
       - name: executar o programa principal
         run: ./potencia 5 5
@@ -18,7 +18,7 @@ jobs:
         run: cat potencia.txt
 
       - name: compilar o arquivo de teste
-        run: gcc test_potencia.c function_potencia.c -o test_potencia
+        run: gcc test_potencia.c -o test_potencia
 
       - name: executar o arquivo de teste
         run: ./test_potencia
